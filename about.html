@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Signoff Coffee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#f2faf5;
+}
+
+/* ===== HERO ===== */
+.hero{
+  height:100vh;
+  background:
+    radial-gradient(circle at center,rgba(120,255,180,.2),transparent 60%),
+    linear-gradient(rgba(10,60,35,.85),rgba(10,60,35,.85)),
+    url('coco-bg.jpg') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.hero h1{
+  font-size:4.2rem;
+  letter-spacing:5px;
+  animation:glow 3s infinite alternate;
+}
+
+.hero p{
+  max-width:650px;
+  margin:auto;
+  font-size:1.3rem;
+  line-height:1.9;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px rgba(140,255,190,.4);}
+  to{text-shadow:0 0 25px rgba(140,255,190,.8);}
+}
+
+/* ===== SECTION ===== */
+.section{
+  padding:110px 12%;
+}
+
+/* ===== OWNER ===== */
+.owner-wrap{
+  text-align:center;
+  margin-top:-160px;
+}
+
+.owner-img{
+  width:320px;
+  height:320px;
+  object-fit:cover;
+  border-radius:50%;
+  border:8px solid rgba(255,255,255,.8);
+  box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+
+.owner-card{
+  max-width:900px;
+  margin:70px auto 0;
+  background:white;
+  padding:60px;
+  border-radius:35px;
+  box-shadow:0 30px 70px rgba(0,0,0,.15);
+  text-align:center;
+}
+
+.owner-card h2{
+  color:#1e7f4f;
+  font-size:2.8rem;
+  margin-bottom:20px;
+}
+
+/* ===== STORY TOGGLE ===== */
+.story-btn{
+  background:#1e7f4f;
+  color:white;
+  border:none;
+  padding:14px 36px;
+  border-radius:30px;
+  font-size:1rem;
+  cursor:pointer;
+  margin-bottom:30px;
+  transition:.3s;
+}
+
+.story-btn:hover{
+  background:#155f3b;
+}
+
+#story-content{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .7s ease;
+  text-align:left;
+}
+
+#story-content p{
+  color:#555;
+  font-size:1.1rem;
+  line-height:2;
+}
+
+.signature{
+  margin-top:25px;
+  font-weight:600;
+  color:#1e7f4f;
+  text-align:center;
+}
+
+/* ===== VALUES ===== */
+.values{
+  background:linear-gradient(135deg,#e9f9f0,#ffffff);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:45px;
+  margin-top:70px;
+}
+
+.card{
+  background:white;
+  padding:45px;
+  border-radius:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.08);
+  text-align:center;
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+}
+
+.card i{
+  font-size:42px;
+  color:#2e8b57;
+  margin-bottom:18px;
+}
+
+/* ===== QUOTE ===== */
+.quote{
+  background:linear-gradient(135deg,#1e7f4f,#7ce0a8);
+  padding:140px 12%;
+  text-align:center;
+  color:white;
+  font-size:2.2rem;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#0c3d29;
+  color:#cdeee0;
+  padding:30px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SIGNOFF COFFEE</div>
+  <nav>
+    <ul id="MenuItems">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Menu.html">Menu</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <h1>SIGNOFF COFFEE</h1>
+    <p>Kopi Tika Off 🚢</p>
+  </div>
+</section>
+
+<!-- OWNER STORY -->
+<section class="section">
+  <div class="owner-wrap">
+    <img src="owner.jpg" class="owner-img">
+  </div>
+
+  <div class="owner-card">
+    <h2>Our Story</h2>
+
+    <button class="story-btn" onclick="toggleStory()">Read Our Story</button>
+
+    <div id="story-content">
+      <p>
+        Signoff Coffee was founded by Mr. Mohamad Hilmi Bin Mohamad, a seafarer with a strong passion for coffee and food. He worked as a second chef on board ships, where he spent months at sea preparing meals in fast-paced kitchen environments. During his off-duty periods, usually 3 months after 6 months of sailing, he decided to make the most of his time at home by starting a small business. That was when Signoff Coffee was born.<br>
+
+        The name “Signoff” comes from a term commonly used among those who work at sea, where “sign on” means reporting for duty and “sign off” means returning home. For Mr. Hilmi, every sign off is not just a break, but a time to connect with people through coffee. That is how the brand’s tagline “kopi tika off” came to life, reminding people to enjoy a good cup of coffee during their break, off day, or anytime they need to pause.<br>
+
+        Mr. Hilmi holds a Diploma in Culinary Arts and has also worked in cafes as both a barista and kitchen crew, gaining hands-on experience in both food and coffee preparation. Signoff Coffee officially opened on 7 September 2024, starting as a humble carboot stall. Since then, it has joined events like FESKO UiTM Machang, handled wedding catering, and participated in various pop-up booths. He continues to serve each cup with care, blending his sea stories, culinary skills, and passion into every sip.
+      </p>
+      <p class="signature">— Founder, Signoff Coffee</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section values">
+  <h2 style="text-align:center;color:#1e7f4f;">Why Signoff?</h2>
+  <div class="grid">
+    <div class="card">
+      <i class="fa fa-leaf"></i>
+      <h4>Nature Inspired</h4>
+      <p>Fresh coconut & green ingredients.</p>
+    </div>
+    <div class="card">
+      <i class="fa fa-coffee"></i>
+      <h4>Balanced Taste</h4>
+      <p>Smooth, calming flavours.</p>
+    </div>
+    <div class="card">
+      <i class="fa fa-heart"></i>
+      <h4>Feel-Good</h4>
+      <p>Every cup is crafted with care.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="quote">
+  “Drink slow. Feel fresh. Sign off the noise.”
+</section>
+
+<!-----footer--->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download App</h3>
+          <p>Download App for Android and ios mobile phone</p>
+          <div class="app-logo">
+            <img src="playstore.jpg">
+             <img src="appstore.jpg">
+           </div>
+        </div>
+        <div class="footer-col-2">
+        <p>Operating Hours: Sunday - Friday <br>5pm - 11 pm</p>
+        </div>
+       <div class="footer-col-3">
+  <h3>Useful Links</h3>
+  <ul>
+    <li>
+      <a href="https://www.google.com/maps/place/Signoff+Coffee/@5.7961854,102.265175,17z"
+         target="_blank">
+        Location
+      </a>
+    </li>
+  </ul>
+</div>
+
+       <div class="footer-col-4">
+  <h3>Follow us</h3>
+  <ul>
+    <li><a href="https://www.tiktok.com/@signoffcoffee?_r=1&_t=ZS-930UHRBOKWq" target="_blank">Tiktok</a></li>
+    <li><a href="https://www.instagram.com/signoffcoffee_?igsh=a255ajdkcm1tcWw3" target="_blank">Instagram</a></li>
+  </ul>
+</div>
+</div>
+      <hr>
+      <p class="copyright">Copyright 2026 - Luméa Tech</p>
+    </div>
+  </div>
+
+<!-- SCRIPT -->
+<script>
+function toggleStory(){
+  const content = document.getElementById("story-content");
+  const btn = document.querySelector(".story-btn");
+
+  if(content.style.maxHeight){
+    content.style.maxHeight = null;
+    btn.innerText = "Read Our Story";
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    btn.innerText = "Close Story";
+  }
+}
+</script>
+
+</body>
+</html>

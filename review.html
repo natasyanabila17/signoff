@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review Archive | Signoff Coffee</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+/* ================= BODY ================= */
+body{
+  font-family:system-ui,monospace;
+  background:#44624a;
+  color:#e5e7eb;
+  overflow-x:hidden; /* ✔ penting */
+}
+
+/* ================= HEADER (KEKAL ASAL) ================= */
+header{
+  height:50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:5px 50px;
+  background:black;
+  position:relative;
+  z-index:999;
+}
+
+.logo{
+  color:#fff;
+  font-size:24px;
+  font-weight:bold;
+  letter-spacing:4px;
+}
+
+nav{flex:1;text-align:right}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+  justify-content:flex-end;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+}
+nav a:hover{color:#38bdf8}
+
+.nav-icons{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+.nav-icons img{width:28px;cursor:pointer}
+.menu-icon{display:none}
+
+/* ================= MAIN LAYOUT ================= */
+.main{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  min-height:calc(100vh - 50px); /* ✔ penting */
+}
+
+/* ================= INDEX ================= */
+.index{
+  border-right:1px solid #1e293b;
+  padding:30px;
+}
+
+.index h2{
+  font-size:.85rem;
+  color:#38bdf8;
+  margin-bottom:20px;
+  letter-spacing:2px;
+}
+
+.entry{
+  padding:14px;
+  margin-bottom:12px;
+  cursor:pointer;
+  border-left:3px solid transparent;
+}
+.entry:hover{
+  border-left-color:#38bdf8;
+  background:rgba(56,189,248,.05);
+}
+.entry span{
+  display:block;
+  font-size:.75rem;
+  color:#9ca3af;
+}
+
+/* ================= VIEWER ================= */
+.viewer{
+  padding:50px;
+  position:relative;
+}
+
+.viewer::before{
+  content:"DECODING CUSTOMER SIGNAL";
+  position:absolute;
+  top:25px;
+  right:50px;
+  font-size:.7rem;
+  letter-spacing:3px;
+  color:#38bdf8;
+  opacity:.5;
+}
+
+.review-name{font-size:2.2rem;margin-bottom:10px}
+.review-stars{color:#facc15;margin-bottom:30px}
+
+.review-text{
+  max-width:600px;
+  font-size:1.05rem;
+  line-height:1.8;
+  border-left:3px solid #38bdf8;
+  padding-left:20px;
+}
+
+.review-time{
+  margin-top:40px;
+  font-size:.8rem;
+  color:#9ca3af;
+}
+
+/* ================= FORM ================= */
+.form{
+  position:absolute;
+  bottom:40px;
+  right:40px;
+  width:300px;
+  border:1px solid #1e293b;
+  padding:20px;
+  background:#020617;
+}
+
+.form h3{
+  font-size:.8rem;
+  margin-bottom:12px;
+  letter-spacing:2px;
+  color:#38bdf8;
+}
+
+.form input,
+.form textarea,
+.form select{
+  width:100%;
+  margin-bottom:10px;
+  padding:8px;
+  background:black;
+  border:1px solid #1e293b;
+  color:#38bdf8;
+}
+
+.form button{
+  width:100%;
+  background:#38bdf8;
+  color:#020617;
+  border:none;
+  padding:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:#000;
+  color:#8a8a8a;
+  padding:60px 0 20px;
+  width:100%;
+}
+
+.footer .container{
+  max-width:1200px;
+  margin:auto;
+  padding:0 25px;
+}
+
+.footer .row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+
+.footer h3{
+  color:#fff;
+  margin-bottom:20px;
+}
+
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4{
+  min-width:200px;
+  margin-bottom:20px;
+}
+
+.footer-col-2{
+  flex:1;
+  text-align:center;
+}
+
+.footer ul{list-style:none}
+
+.footer a{
+  color:#8a8a8a;
+  text-decoration:none;
+}
+.footer a:hover{color:#38bdf8}
+
+.app-logo img{
+  width:120px;
+  margin-right:10px;
+}
+
+.footer hr{
+  border:none;
+  background:#444;
+  height:1px;
+  margin:20px 0;
+}
+
+.copyright{
+  text-align:center;
+  font-size:13px;
+}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+  .main{grid-template-columns:1fr}
+  .form{position:static;margin-top:40px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SIGNOFF COFFEE</div>
+  <nav>
+    <ul id="MenuItems">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="review.html">Review</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="nav-icons">
+    <img src="cart.png">
+    <img src="menu.png" class="menu-icon" onclick="menutoggle()">
+  </div>
+</header>
+
+<div class="main">
+  <div class="index" id="index">
+    <h2>SIGNAL LOG</h2>
+    <div class="entry" onclick="loadReview(0)">Amirul<span>★★★★★</span></div>
+<div class="entry" onclick="loadReview(1)">Sofia<span>★★★★☆</span></div>
+<div class="entry" onclick="loadReview(2)">Daniel<span>★★★★★</span></div>
+<div class="entry" onclick="loadReview(3)">Nur<span>★★★★★</span></div>
+<div class="entry" onclick="loadReview(4)">Natasya<span>★★★★★</span></div>
+<div class="entry" onclick="loadReview(5)">Nabila<span>★★★★★</span></div>
+<div class="entry" onclick="loadReview(6)">Syazwani<span>★★★★★</span></div>
+
+  </div>
+
+  <div class="viewer">
+    <div class="review-name" id="rName">Amirul</div>
+    <div class="review-stars" id="rStars">★★★★★</div>
+    <div class="review-text" id="rText">Smooth flavour with a premium finish.</div>
+    <div class="review-time" id="rTime">Signal received 3 days ago</div>
+
+    <div class="form">
+      <h3>UPLOAD SIGNAL</h3>
+      <input id="name" placeholder="Name">
+      <select id="rate">
+        <option>★★★★★</option>
+        <option>★★★★☆</option>
+        <option>★★★☆☆</option>
+      </select>
+      <textarea id="msg" placeholder="Signal content..."></textarea>
+      <button onclick="addReview()">TRANSMIT</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col-1">
+        <h3>Download App</h3>
+        <div class="app-logo">
+          <img src="playstore.jpg">
+          <img src="appstore.jpg">
+        </div>
+      </div>
+
+      <div class="footer-col-2">
+        <p>Operating Hours: Sunday - Friday <br>5pm - 11 pm</p>
+      </div>
+
+      <div class="footer-col-3">
+        <h3>Useful Links</h3>
+        <ul>
+          <li><a href="https://www.google.com/maps/place/Signoff+Coffee" target="_blank">Location</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-4">
+        <h3>Follow us</h3>
+        <ul>
+          <li><a href="https://www.tiktok.com/@signoffcoffee" target="_blank">Tiktok</a></li>
+          <li><a href="https://www.instagram.com/signoffcoffee_" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p class="copyright">Copyright 2026 - Luméa Tech</p>
+  </div>
+</div>
+
+<script>
+const rName=document.getElementById("rName");
+const rStars=document.getElementById("rStars");
+const rText=document.getElementById("rText");
+const rTime=document.getElementById("rTime");
+const index=document.getElementById("index");
+const name=document.getElementById("name");
+const rate=document.getElementById("rate");
+const msg=document.getElementById("msg");
+
+function menutoggle(){
+  document.getElementById("MenuItems").classList.toggle("show");
+}
+
+const data = [
+ {n:"Amirul",s:"★★★★★",t:"Smooth flavour with a premium finish.",d:"3 days ago"},
+ {n:"Sofia",s:"★★★★☆",t:"Elegant packaging and strong aroma.",d:"1 week ago"},
+ {n:"Daniel",s:"★★★★★",t:"Worth every ringgit.",d:"2 weeks ago"},
+ {n:"Nur",s:"★★★★★",t:"Very calming ambience and friendly staff.",d:"5 days ago"},
+ {n:"Natasya",s:"★★★★★",t:"Matcha terbaik pernah rasa.",d:"1 day ago"},
+ {n:"Nabila",s:"★★★★★",t:"Service laju dan coffee sedap.",d:"2 days ago"},
+ {n:"Syazwani",s:"★★★★★",t:"Will definitely come again!",d:"just now"}
+];
+
+
+function loadReview(i){
+  rName.textContent=data[i].n;
+  rStars.textContent=data[i].s;
+  rText.textContent=data[i].t;
+  rTime.textContent="Signal received "+data[i].d;
+}
+
+function addReview(){
+  if(!name.value||!msg.value)return;
+  const obj={n:name.value,s:rate.value,t:msg.value,d:"just now"};
+  data.push(obj);
+  const div=document.createElement("div");
+  div.className="entry";
+  div.innerHTML=`${obj.n}<span>${obj.s}</span>`;
+  div.onclick=()=>loadReview(data.length-1);
+  index.appendChild(div);
+  loadReview(data.length-1);
+  name.value="";
+  msg.value="";
+}
+</script>
+
+</body>
+</html>
